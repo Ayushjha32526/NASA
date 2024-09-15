@@ -1,0 +1,182 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #34495e;
+}
+
+.navbar .logo {
+    color: #00FF7F;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px;
+    transition: background 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #00FF7F;
+    color: #111;
+    border-radius: 5px;
+}
+
+/* Insight Section */
+.insight-section {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.insight-card {
+    background-color: #222;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    display: flex; /* Display flex to align image and text */
+    align-items: center;
+    gap: 20px; /* Add gap between image and text */
+    transition: transform 0.3s ease;
+    flex-direction: row; /* Ensure content and image are in a row */
+}
+
+.insight-card .content {
+    flex: 1; /* Take up remaining space */
+}
+
+.insight-card .round-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    object-fit: cover; /* Ensure the image scales correctly */
+    order: 2; /* Place image after content */
+}
+
+.insight-card .content {
+    order: 1; /* Place content before image */
+}
+
+.insight-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Content next to the image */
+.content {
+    max-width: 1000px;
+}
+
+.year-location {
+    color: #00FF7F;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.tags {
+    margin-bottom: 20px;
+}
+
+.tags span {
+    background-color: #00FF7F;
+    color: #111;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+.author-info {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.votes {
+    display: flex;
+    gap: 10px;
+}
+
+.votes button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.votes button:hover {
+    background-color: #00FF7F;
+    color: #111;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .insight-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .round-image {
+        margin-bottom: 20px;
+        order: 1; /* Move image to top in mobile view */
+    }
+
+    .content {
+        order: 2; /* Move content below image in mobile view */
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 0.9rem;
+    }
+}
