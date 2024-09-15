@@ -1,4 +1,3 @@
-// vite.config.js
 export default {
   root: "src/",
   publicDir: "../static/",
@@ -11,6 +10,16 @@ export default {
     outDir: "../dist", // Output in the dist/ folder
     emptyOutDir: true, // Empty the folder first
     sourcemap: true, // Add sourcemap
-    chunkSizeWarningLimit: 1000, // Increase chunk size warning limit to 1000 KB
+    chunkSizeWarningLimit: 1000, // Increase the chunk size warning limit to 1000 kB
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          // Split dependencies into separate chunks
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        },
+      },
+    },
   },
 };
